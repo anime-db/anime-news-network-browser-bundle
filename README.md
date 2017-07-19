@@ -1,2 +1,2 @@
-# anime-news-network-browser-bundle
-AnimeNewsNetwork.com
+AnimeNewsNetwork.com API browser
+================================
