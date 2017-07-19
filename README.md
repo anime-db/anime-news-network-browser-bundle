@@ -1,3 +1,4 @@
+[![AnimeNewsNetwork.com](http://www.animenewsnetwork.com/stylesheets/img/logo.name.no-dot.png)](http://www.animenewsnetwork.com)
 
 [![Latest Stable Version](https://img.shields.io/packagist/v/anime-db/anime-news-network-browser-bundle.svg?maxAge=3600&label=stable)](https://packagist.org/packages/anime-db/anime-news-network-browser-bundle)
 [![Total Downloads](https://img.shields.io/packagist/dt/anime-db/anime-news-network-browser-bundle.svg?maxAge=3600)](https://packagist.org/packages/anime-db/anime-news-network-browser-bundle)
