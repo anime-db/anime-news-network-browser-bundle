@@ -11,3 +11,63 @@
 
 AnimeNewsNetwork.com API browser
 ================================
+
+Installation
+------------
+
+Pretty simple with [Composer](http://packagist.org), run:
+
+```sh
+composer require anime-db/anime-news-network-browser-bundle
+```
+
+Add AnimeDbAnimeNewsNetworkBrowserBundle to your application kernel
+
+```php
+// app/appKernel.php
+
+public function registerBundles()
+{
+    $bundles = array(
+        // ...
+        new AnimeDb\Bundle\AnimeNewsNetworkBrowserBundle\AnimeDbAnimeNewsNetworkBrowserBundle(),
+    );
+}
+```
+
+Configuration
+-------------
+
+```yml
+anime_db_anime_news_network_browser:
+    # Host name
+    # As a default used 'https://cdn.animenewsnetwork.com'
+    host: 'https://cdn.animenewsnetwork.com'
+
+    # Reports
+    # As a default used '/encyclopedia/reports.xml'
+    reports: '/encyclopedia/reports.xml'
+
+    # Anime/Manga Details
+    # As a default used '/encyclopedia/api.xml'
+    details: '/encyclopedia/api.xml'
+
+    # HTTP User-Agent
+    # No default value
+    client: 'My Custom Bot 1.0'
+```
+
+Usage
+-----
+
+First get browser
+
+```php
+$browser = $this->get('anime_db.anime_news_network.browser');
+```
+
+License
+-------
+
+This bundle is under the [GPL v3 license](http://opensource.org/licenses/GPL-3.0).
+See the complete license in the file: LICENSE
