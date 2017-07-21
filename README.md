@@ -12,6 +12,8 @@
 AnimeNewsNetwork.com API browser
 ================================
 
+Encyclopedia API documentation you can see [here](http://www.animenewsnetwork.com/encyclopedia/api.php).
+
 Installation
 ------------
 
@@ -65,6 +67,48 @@ First get browser
 ```php
 $browser = $this->get('anime_db.anime_news_network.browser');
 ```
+
+### Details
+
+Detail info about anime [Jinki:Extend](http://www.animenewsnetwork.com/encyclopedia/anime.php?id=4658).
+
+```php
+$xml = $browser->details(['anime' => 4658]);
+```
+
+or
+
+```php
+$xml = $browser->details(['title' => 4658]);
+```
+
+Detail info about manga [Berserk](http://www.animenewsnetwork.com/encyclopedia/manga.php?id=2298).
+
+```php
+$xml = $browser->details(['manga' => 2298]);
+```
+
+or
+
+```php
+$xml = $browser->details(['title' => 2298]);
+```
+
+### Reports
+
+Anime/Manga list
+
+```php
+$xml = $browser->reports(155);
+```
+
+People by Kanji name
+
+```php
+$xml = $browser->reports(165, ['nskip' => 20, 'nlist' => 10]);
+```
+
+All reports you can see [here](http://www.animenewsnetwork.com/encyclopedia/reports.php).
 
 License
 -------
