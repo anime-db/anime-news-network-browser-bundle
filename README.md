@@ -116,7 +116,7 @@ All reports you can see [here](http://www.animenewsnetwork.com/encyclopedia/repo
 use AnimeDb\Bundle\AnimeNewsNetworkBrowserBundle\Exception\NotFoundException;
 
 try {
-    $content = $browser->get('anime', ['aid' => 1]);
+    $content = $browser->details(['anime' => 4658]);
 } catch (NotFoundException $e) {
     // page not found
 } catch (\Exception $e) {
