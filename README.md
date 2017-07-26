@@ -110,6 +110,20 @@ $xml = $browser->reports(165, ['nskip' => 20, 'nlist' => 10]);
 
 All reports you can see [here](http://www.animenewsnetwork.com/encyclopedia/reports.php).
 
+### Catch exceptions
+
+```php
+use AnimeDb\Bundle\AnimeNewsNetworkBrowserBundle\Exception\NotFoundException;
+
+try {
+    $content = $browser->get('anime', ['aid' => 1]);
+} catch (NotFoundException $e) {
+    // page not found
+} catch (\Exception $e) {
+    // other exceptions
+}
+```
+
 License
 -------
 
