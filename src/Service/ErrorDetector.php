@@ -34,18 +34,8 @@ class ErrorDetector
             return $content;
         }
 
-        if (preg_match('/<warning>no result for (title|manga|anime)=([^<]*)<\/warning>/i', $content, $match)) {
-            switch ($match[1]) {
-                case 'title':
-                    throw NotFoundException::title($match[2]);
-                    break;
-                case 'manga':
-                    throw NotFoundException::manga($match[2]);
-                    break;
-                case 'anime':
-                    throw NotFoundException::anime($match[2]);
-                    break;
-            }
+        if (preg_match('/<warning>no result for (?<source>[a-z]+)=(?<id>[^<]*)<\/warning>/i', $content, $match)) {
+            throw NotFoundException::source($match['source'], $match['id']);
         }
 
         throw ErrorException::error(preg_replace('/.*<warning>(.*)<\/warning>.*/im', '$1', $content));

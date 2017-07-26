@@ -13,33 +13,14 @@ namespace AnimeDb\Bundle\AnimeNewsNetworkBrowserBundle\Exception;
 class NotFoundException extends ErrorException
 {
     /**
+     * @param $source $id
      * @param string $id
      *
      * @return NotFoundException
      */
-    public static function anime($id)
+    public static function source($source, $id)
     {
-        return new self(sprintf('Anime "%s" not found.', $id));
-    }
-
-    /**
-     * @param string $id
-     *
-     * @return NotFoundException
-     */
-    public static function manga($id)
-    {
-        return new self(sprintf('Manga "%s" not found.', $id));
-    }
-
-    /**
-     * @param string $id
-     *
-     * @return NotFoundException
-     */
-    public static function title($id)
-    {
-        return new self(sprintf('Title "%s" not found.', $id));
+        return new self(sprintf('%s with id "%s" not found.', ucfirst($source), $id));
     }
 
     /**

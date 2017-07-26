@@ -86,39 +86,23 @@ class ErrorDetectorTest extends \PHPUnit_Framework_TestCase
         return [
             [
                 '<ann><warning>no result for title=1</warning></ann>',
-                'Title "1" not found.',
-            ],
-            [
-                '<ann><warning>no result for title=foo</warning></ann>',
-                'Title "foo" not found.',
-            ],
-            [
-                '<ann><warning>no result for title=</warning></ann>',
-                'Title "" not found.',
+                'Title with id "1" not found.',
             ],
             [
                 '<ann><warning>no result for manga=1</warning></ann>',
-                'Manga "1" not found.',
-            ],
-            [
-                '<ann><warning>no result for manga=foo</warning></ann>',
-                'Manga "foo" not found.',
-            ],
-            [
-                '<ann><warning>no result for manga=</warning></ann>',
-                'Manga "" not found.',
+                'Manga with id "1" not found.',
             ],
             [
                 '<ann><warning>no result for anime=1</warning></ann>',
-                'Anime "1" not found.',
+                'Anime with id "1" not found.',
             ],
             [
                 '<ann><warning>no result for anime=foo</warning></ann>',
-                'Anime "foo" not found.',
+                'Anime with id "foo" not found.',
             ],
             [
                 '<ann><warning>no result for anime=</warning></ann>',
-                'Anime "" not found.',
+                'Anime with id "" not found.',
             ],
         ];
     }
