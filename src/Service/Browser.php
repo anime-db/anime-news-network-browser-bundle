@@ -10,14 +10,19 @@
 
 namespace AnimeDb\Bundle\AnimeNewsNetworkBrowserBundle\Service;
 
-use GuzzleHttp\Client;
+use GuzzleHttp\Client as HttpClient;
 
 class Browser
 {
     /**
-     * @var Client
+     * @var HttpClient
      */
     private $client;
+
+    /**
+     * @var ErrorDetector
+     */
+    private $detector;
 
     /**
      * @var string
@@ -40,15 +45,17 @@ class Browser
     private $app_client;
 
     /**
-     * @param Client $client
-     * @param string $host
-     * @param string $reports
-     * @param string $details
-     * @param string $app_client
+     * @param HttpClient    $client
+     * @param ErrorDetector $detector
+     * @param string        $host
+     * @param string        $reports
+     * @param string        $details
+     * @param string        $app_client
      */
-    public function __construct(Client $client, $host, $reports, $details, $app_client)
+    public function __construct(HttpClient $client, ErrorDetector $detector, $host, $reports, $details, $app_client)
     {
         $this->client = $client;
+        $this->detector = $detector;
         $this->host = $host;
         $this->reports = $reports;
         $this->details = $details;
@@ -95,6 +102,6 @@ class Browser
 
         $response = $this->client->request('GET', $url, $options);
 
-        return $response->getBody()->getContents();
+        return $this->detector->detect($response);
     }
 }
