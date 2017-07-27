@@ -92,9 +92,11 @@ class BrowserTest extends \PHPUnit_Framework_TestCase
     public function testReports($app_client)
     {
         $id = 155;
-        $params = ['bar' => 'baz'];
+        $params = ['timeout' => 5];
         $options = $params + [
-            'id' => $id,
+            'query' => [
+                'id' => $id,
+            ],
             'headers' => [
                 'User-Agent' => $this->app_client,
             ],
@@ -131,7 +133,7 @@ class BrowserTest extends \PHPUnit_Framework_TestCase
      */
     public function testDetails($app_client)
     {
-        $params = ['bar' => 'baz'];
+        $params = ['timeout' => 5];
         $options = $params + [
                 'headers' => [
                     'User-Agent' => $this->app_client,

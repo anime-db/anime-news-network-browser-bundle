@@ -70,7 +70,7 @@ class Browser
      */
     public function reports($id, array $options = [])
     {
-        $options['id'] = $id;
+        $options['query']['id'] = $id;
 
         return $this->request($this->host.$this->reports, $options);
     }
