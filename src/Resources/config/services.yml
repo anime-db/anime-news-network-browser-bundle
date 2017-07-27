@@ -1,7 +1,17 @@
 services:
     anime_db.anime_news_network.browser:
         class: AnimeDb\Bundle\AnimeNewsNetworkBrowserBundle\Service\Browser
-        arguments: [ '@anime_db.anime_news_network.browser.client', ~, ~, ~, ~ ]
+        arguments:
+            - '@anime_db.anime_news_network.browser.client'
+            - '@anime_db.anime_news_network.browser.error_detector'
+            - ~
+            - ~
+            - ~
+            - ~
+
+    anime_db.anime_news_network.browser.error_detector:
+        class: AnimeDb\Bundle\AnimeNewsNetworkBrowserBundle\Service\ErrorDetector
+        public: false
 
     anime_db.anime_news_network.browser.client:
         class: GuzzleHttp\Client

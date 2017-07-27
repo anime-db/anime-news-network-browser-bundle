@@ -29,10 +29,10 @@ class AnimeDbAnimeNewsNetworkBrowserExtension extends Extension
         $config = $this->processConfiguration(new Configuration(), $configs);
 
         $container->getDefinition('anime_db.anime_news_network.browser')
-            ->replaceArgument(1, $config['host'])
-            ->replaceArgument(2, $config['reports'])
-            ->replaceArgument(3, $config['details'])
-            ->replaceArgument(4, $config['client'])
+            ->replaceArgument(2, $config['host'])
+            ->replaceArgument(3, $config['reports'])
+            ->replaceArgument(4, $config['details'])
+            ->replaceArgument(5, $config['client'])
         ;
     }
 }

@@ -77,25 +77,25 @@ class AnimeDbAnimeNewsNetworkBrowserExtensionTest extends \PHPUnit_Framework_Tes
         $browser
             ->expects($this->at(0))
             ->method('replaceArgument')
-            ->with(1, $host)
+            ->with(2, $host)
             ->will($this->returnSelf())
         ;
         $browser
             ->expects($this->at(1))
             ->method('replaceArgument')
-            ->with(2, $reports)
+            ->with(3, $reports)
             ->will($this->returnSelf())
         ;
         $browser
             ->expects($this->at(2))
             ->method('replaceArgument')
-            ->with(3, $details)
+            ->with(4, $details)
             ->will($this->returnSelf())
         ;
         $browser
             ->expects($this->at(3))
             ->method('replaceArgument')
-            ->with(4, $client)
+            ->with(5, $client)
             ->will($this->returnSelf())
         ;
 
