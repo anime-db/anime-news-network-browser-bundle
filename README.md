@@ -124,6 +124,10 @@ try {
 }
 ```
 
+### Request options
+
+You can customize request options. See [Guzzle Documentation](http://docs.guzzlephp.org/en/stable/request-options.html).
+
 License
 -------
 
