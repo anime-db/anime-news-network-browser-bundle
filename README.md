@@ -73,25 +73,25 @@ $browser = $this->get('anime_db.anime_news_network.browser');
 Detail info about anime [Jinki:Extend](http://www.animenewsnetwork.com/encyclopedia/anime.php?id=4658).
 
 ```php
-$xml = $browser->details(['anime' => 4658]);
+$xml = $browser->details(['query' => ['anime' => 4658]]);
 ```
 
 or
 
 ```php
-$xml = $browser->details(['title' => 4658]);
+$xml = $browser->details(['query' => ['title' => 4658]]);
 ```
 
 Detail info about manga [Berserk](http://www.animenewsnetwork.com/encyclopedia/manga.php?id=2298).
 
 ```php
-$xml = $browser->details(['manga' => 2298]);
+$xml = $browser->details(['query' => ['manga' => 2298]]);
 ```
 
 or
 
 ```php
-$xml = $browser->details(['title' => 2298]);
+$xml = $browser->details(['query' => ['title' => 2298]]);
 ```
 
 ### Reports
@@ -105,7 +105,7 @@ $xml = $browser->reports(155);
 People by Kanji name
 
 ```php
-$xml = $browser->reports(165, ['nskip' => 20, 'nlist' => 10]);
+$xml = $browser->reports(165, ['query' => ['nskip' => 20, 'nlist' => 10]]);
 ```
 
 All reports you can see [here](http://www.animenewsnetwork.com/encyclopedia/reports.php).
@@ -116,7 +116,7 @@ All reports you can see [here](http://www.animenewsnetwork.com/encyclopedia/repo
 use AnimeDb\Bundle\AnimeNewsNetworkBrowserBundle\Exception\NotFoundException;
 
 try {
-    $content = $browser->details(['anime' => 4658]);
+    $content = $browser->details(['query' => ['anime' => 4658]]);
 } catch (NotFoundException $e) {
     // page not found
 } catch (\Exception $e) {
