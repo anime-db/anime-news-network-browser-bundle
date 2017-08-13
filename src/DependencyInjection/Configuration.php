@@ -22,7 +22,7 @@ class Configuration implements ConfigurationInterface
      * Example config:
      *
      * anime_db_anime_news_network_browser:
-     *     host: 'https://cdn.animenewsnetwork.com'
+     *     host: 'https://cdn.animenewsnetwork.cc'
      *     reports: '/encyclopedia/reports.xml'
      *     details: '/encyclopedia/api.xml'
      *     client: 'My Custom Bot 1.0'
@@ -35,7 +35,7 @@ class Configuration implements ConfigurationInterface
             ->root('anime_db_anime_news_network_browser')
                 ->children()
                     ->scalarNode('host')
-                        ->defaultValue('https://cdn.animenewsnetwork.com')
+                        ->defaultValue('https://cdn.animenewsnetwork.cc')
                         ->cannotBeEmpty()
                     ->end()
                     ->scalarNode('reports')

@@ -40,7 +40,7 @@ class AnimeDbAnimeNewsNetworkBrowserExtensionTest extends \PHPUnit_Framework_Tes
         return [
             [
                 [],
-                'https://cdn.animenewsnetwork.com',
+                'https://cdn.animenewsnetwork.cc',
                 '/encyclopedia/reports.xml',
                 '/encyclopedia/api.xml',
                 '',
@@ -48,13 +48,13 @@ class AnimeDbAnimeNewsNetworkBrowserExtensionTest extends \PHPUnit_Framework_Tes
             [
                 [
                     'anime_db_anime_news_network_browser' => [
-                        'host' => 'http://cdn.animenewsnetwork.com',
+                        'host' => 'http://cdn.animenewsnetwork.cc',
                         'reports' => '/encyclopedia/reports.json',
                         'details' => '/encyclopedia/api.json',
                         'client' => 'My Custom Bot 1.0',
                     ],
                 ],
-                'http://cdn.animenewsnetwork.com',
+                'http://cdn.animenewsnetwork.cc',
                 '/encyclopedia/reports.json',
                 '/encyclopedia/api.json',
                 'My Custom Bot 1.0',

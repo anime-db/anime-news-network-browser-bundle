@@ -46,7 +46,7 @@ class ConfigurationTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(['host', 'reports', 'details', 'client'], array_keys($children));
 
         $this->assertInstanceOf(ScalarNode::class, $children['host']);
-        $this->assertEquals('https://cdn.animenewsnetwork.com', $children['host']->getDefaultValue());
+        $this->assertEquals('https://cdn.animenewsnetwork.cc', $children['host']->getDefaultValue());
         $this->assertFalse($children['host']->isRequired());
 
         $this->assertInstanceOf(ScalarNode::class, $children['reports']);
